@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -21,10 +22,8 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('anniversaire', EntityType::class, [
-                'class' => Anniversaire::class,
-                'choice_label' => 'date',
-                'label' => 'Date de naissance',
+            ->add('anniversaire', DateType::class, [
+                'widget' => 'single_text',
             ])
             ->add('email')
             // ->add('agreeTerms', CheckboxType::class, [
