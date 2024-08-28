@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="display-4 mb-4">Boissons Proposées par nos utilisateurs :</h1>
+
+    <div class="row">
+        {% for boisson in boissons %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ boisson.nom }}</h5>
+                        {% if boisson.description %}
+                            <p class="card-text">{{ boisson.description }}</p>
+                        {% else %}
+                            <p class="card-text text-muted">Aucune description disponible.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

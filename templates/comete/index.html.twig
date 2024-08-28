@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="display-4 mb-4">Liste des Comètes :</h1>
+
+    <div class="row">
+        {% for comete in cometes %}
+            <div class="col-md-6 mb-4">
+                <div class="card d-flex flex-row align-items-center">
+                    <img src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="{{ comete.nom }}" class="img-fluid" style="width: 100px; height: 100px; object-fit: cover; margin-right: 15px;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">{{ comete.nom }}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
