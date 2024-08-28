@@ -49,9 +49,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\JoinColumn(nullable: false)]
     private ?Anniversaire $anniversaire = null;
 
-    #[ORM\Column]
-    private bool $isVerified = false;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -159,18 +156,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAnniversaire(?Anniversaire $anniversaire): static
     {
         $this->anniversaire = $anniversaire;
-
-        return $this;
-    }
-
-    public function isVerified(): bool
-    {
-        return $this->isVerified;
-    }
-
-    public function setVerified(bool $isVerified): static
-    {
-        $this->isVerified = $isVerified;
 
         return $this;
     }

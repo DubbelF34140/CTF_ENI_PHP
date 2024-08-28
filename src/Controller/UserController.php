@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Vaporiser;
 use App\Entity\Wish;
 use App\Form\WishType;
 use App\Service\ImageUploader;

@@ -8,12 +8,22 @@
         <thead>
         <tr>
             <th>Email</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
                 <td>{{ user.email }}</td>
+                <td>
+                    <div class="mt-4">
+                        <form action="{{ path('app_user_vaporiser', {'id': user.id}) }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Are you sure you want to vaporized this user?')"><i class="bi bi-x"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
             </tr>
         {% else %}
             <tr>
