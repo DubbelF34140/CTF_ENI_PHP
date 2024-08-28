@@ -32,7 +32,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[Assert\NotBlank(message: 'Le mot de passe ne doit pas être vide')]
+    // #[Assert\NotBlank(message: 'Le mot de passe ne doit pas être vide')]
     #[ORM\Column]
     private ?string $password = null;
 
@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-    #[Assert\NotBlank(message: 'La date de naissance ne doit pas être vide')]
+    
     #[ORM\ManyToOne(inversedBy: 'users')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Anniversaire $anniversaire = null;

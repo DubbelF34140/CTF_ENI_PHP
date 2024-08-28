@@ -14,6 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use App\Entity\Anniversaire;
+use Doctrine\DBAL\Types\DateTimeType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -22,8 +23,14 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('anniversaire', DateType::class, [
+            ->add('date', DateTimeType::class, [
                 'widget' => 'single_text',
+                'mapped' => false,
+            ])
+            ->add('anniversaire', EntityType::class, [
+                'class' => Anniversaire::class,
+                'choice_label' => 'date',
+                'label' => 'Anniversaire'
             ])
             ->add('email')
             // ->add('agreeTerms', CheckboxType::class, [
