@@ -13,22 +13,22 @@ class Axe
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $direction = null;
+    #[ORM\Column(length: 500)]
+    private ?string $description = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDirection(): ?string
+    public function getDescription(): ?string
     {
-        return $this->direction;
+        return $this->description;
     }
 
-    public function setDirection(string $direction): static
+    public function setDescription(string $description): static
     {
-        $this->direction = $direction;
+        $this->description = $description;
 
         return $this;
     }
