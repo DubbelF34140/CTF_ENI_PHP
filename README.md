@@ -2,9 +2,9 @@ Voici un exemple de fichier README pour un projet Symfony :
 
 ---
 
-# Nom du Projet
+# CTF Symfony
 
-**Description** : Une courte description du projet. Par exemple, "Ce projet est une application web développée avec Symfony qui permet de gérer les tâches quotidiennes."
+**Description** : Ce projet est une application web développée avec Symfony qui permet de gérer les tâches quotidiennes.
 
 ## Table des matières
 
