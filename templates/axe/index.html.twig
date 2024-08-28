@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="display-4">Axe d'amélioration du site</h1>
+    <p class="lead">Proposés par nos utilisateurs : </p>
+
+    <ul class="list-group">
+        {% for axe in axes %}
+            <li class="list-group-item">{{ axe.description }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('app_axe_create') }}" class="btn btn-primary">Proposer un commentaire</a>
+    {% endif %}
+
+{% endblock %}
