@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Vaporiser;
 use App\Entity\Wish;
 use App\Form\WishType;
+use App\Repository\UserRepository;
 use App\Service\ImageUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/wish', name: 'app_user_')]
+#[Route('/user', name: 'app_user_')]
 class UserController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
@@ -27,7 +29,7 @@ class UserController extends AbstractController
     {
         $users = $userRepository->findAllExcludingDeleted();
 
-        return $this->render('user/index.html.twig', [
+        return $this->render('user/list.html.twig', [
             'users' => $users,
         ]);
     }
