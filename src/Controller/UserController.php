@@ -3,16 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Entity\Vaporiser;
 use App\Entity\Wish;
 use App\Form\WishType;
-use App\Repository\UserRepository;
+use App\Entity\Vaporiser;
 use App\Service\ImageUploader;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/user', name: 'app_user_')]
 class UserController extends AbstractController
@@ -54,5 +55,11 @@ class UserController extends AbstractController
         $this->entityManager->flush();
 
         return $this->redirectToRoute('app_user_list');
+    }
+
+    #[Route('/account', name: 'account')]
+    public function monCompte(): Response
+    {     
+        return $this->render('user/account.html.twig');
     }
 }

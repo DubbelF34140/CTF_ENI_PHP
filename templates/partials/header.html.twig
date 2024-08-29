@@ -27,7 +27,8 @@
             </div>
             <div>
                 {% if is_granted('ROLE_USER') %}
-                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_logout') }}">Déconnexion</a>
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_user_account') }}">Mon compte</a>
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_logout') }}">Déconnexion</a>                    
                 {% else %}
                     <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_login') }}">Se connecter</a>
                 {% endif %}
