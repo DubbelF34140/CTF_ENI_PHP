@@ -17,7 +17,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     private array $badEmails = [
         'test@test.com',
-   ];
+        'alexis.draud2023@campus-eni.fr',
+    ];
 
     private array $goodEmails = [
         'sebastien.bodin2022@campus-eni.fr',
@@ -36,7 +37,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         'mathis.deschamps2023@campus-eni.fr',
         'emmanuelle.boinot2023@campus-eni.fr',
         'julian.montagne2023@campus-eni.fr',
-        'alexis.draud2023@campus-eni.fr',
         'theo.pohin2023@campus-eni.fr',
         'guillaume.tournan2023@campus-eni.fr',
         'melissa.cochet2023@campus-eni.fr',
