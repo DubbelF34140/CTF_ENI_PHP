@@ -136,3 +136,15 @@ body {
     text-align: center;
     font-size: 1.25rem;
 }
+
+.hover-red:hover {
+    text-shadow: red 1px 0 10px;
+}
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 10vh;
+    right: 5vh;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}

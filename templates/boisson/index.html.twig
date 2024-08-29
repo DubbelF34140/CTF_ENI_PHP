@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="display-4 mb-4">Boissons Proposées par nos utilisateurs :</h1>
+    {% if is_granted('ROLE_BAD') %}
+        <h1 class="display-4 mb-4"><span class="hover-red">Boissons</span> Proposées par nos utilisateurs :</h1>
+    {% else %}
+        <h1 class="display-4 mb-4">Boissons Proposées par nos utilisateurs :</h1>
+    {% endif %}
 
     <div class="row">
         {% for boisson in boissons %}
@@ -19,5 +23,12 @@
             </div>
         {% endfor %}
     </div>
+    {% if is_granted('ROLE_BAD') %}
+        <div class="card fixed-bottom-right">
+            <div class="card-body text-center">
+                <img src="https://media1.tenor.com/m/6wWAAAupK7EAAAAd/thanks-awesome.gif" class="img-fluid rounded" alt="Genius Think Alike GIF">
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}

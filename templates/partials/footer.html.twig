@@ -2,7 +2,7 @@
     &copy; CTF PHP {{ "now"|date("Y") }}
     <ul class="list-inline mb-0">
         <li class="list-inline-item">
-            {% if is_granted('ROLE_USER') %}
+            {% if is_granted('ROLE_GOOD') %}
                 <a href="{{ path('app_axeapp_axe_index') }}" style="color: #ff0900">Voir les commentaires</a>
             {% else %}
                 <a href="{{ path('app_axeapp_axe_index') }}" >Voir les commentaires</a>

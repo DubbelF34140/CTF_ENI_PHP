@@ -19,10 +19,18 @@
                         <td>{{ user.email }}</td>
                         <td class="text-center">
                             <form action="{{ path('app_user_vaporiser', {'id': user.id}) }}" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-outline-danger btn-sm"
-                                        onclick="return confirm('Are you sure you want to vaporize this user?')">
-                                    <i class="fas fa-skull-crossbones"></i> Vaporiser
-                                </button>
+                                {% if is_granted('ROLE_GOOD') %}
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"
+                                            onclick="return confirm('Vaporiser un utilisateur pour essayé!!!')">
+                                        <i class="fas fa-skull-crossbones"></i> Vaporiser
+                                    </button>
+                                {% else %}
+                                    <button type="submit" class="btn btn-outline-primary btn-sm"
+                                            onclick="return confirm('Are you sure you want to vaporize this user?')">
+                                        <i class="fas fa-skull-crossbones"></i> Vaporiser
+                                    </button>
+                                {% endif %}
+
                             </form>
                         </td>
                     </tr>

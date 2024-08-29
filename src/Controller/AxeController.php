@@ -38,9 +38,10 @@ class AxeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($comment);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Merci pour votre commentaire');
             return $this->redirectToRoute('app_axeapp_axe_index');
         }
+
 
         return $this->render('axe/create.html.twig', [
             'form' => $form->createView(),
