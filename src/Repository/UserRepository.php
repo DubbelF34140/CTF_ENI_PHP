@@ -33,6 +33,22 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->getEntityManager()->flush();
     }
 
+    public function findAllExcludingDeleted(): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT u 
+             FROM App\Entity\User u
+             WHERE u.id NOT IN (
+                 SELECT d.id 
+                 FROM App\Entity\Vaporiser d
+             )'
+        );
+
+        return $query->getResult();
+    }
+
     //    /**
     //     * @return User[] Returns an array of User objects
     //     */
