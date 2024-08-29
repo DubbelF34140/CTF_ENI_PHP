@@ -136,9 +136,31 @@ body {
     text-align: center;
     font-size: 1.25rem;
 }
+.hover-red {
+    color: black;
+    text-decoration: none;
+}
 
 .hover-red:hover {
     text-shadow: red 1px 0 10px;
+    text-decoration: none;
+}
+
+.hover-red-peur:hover {
+    text-shadow: red 1px 0 10px;
+    text-decoration: none;
+}
+.hover-red-peur {
+    color: var(--bs-secondary-color)!important;
+    text-decoration: none;
+}
+.hover-red-none:hover {
+    text-shadow: red 1px 0 10px;
+    text-decoration: none;
+}
+.hover-red-none {
+    color: black;
+    text-decoration: none;
 }
 .fixed-bottom-right {
     position: fixed;

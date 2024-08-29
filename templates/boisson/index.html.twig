@@ -1,11 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% if is_granted('ROLE_BAD') %}
-        <h1 class="display-4 mb-4"><span class="hover-red">Boissons</span> Proposées par nos utilisateurs :</h1>
-    {% else %}
         <h1 class="display-4 mb-4">Boissons Proposées par nos utilisateurs :</h1>
-    {% endif %}
 
     <div class="row">
         {% for boisson in boissons %}

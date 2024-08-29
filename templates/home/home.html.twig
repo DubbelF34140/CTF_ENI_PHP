@@ -6,7 +6,7 @@
     <div class="container my-5">
         <div class="card mx-auto" style="max-width: 540px;" type="button" class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <div class="card-header bg-dark text-white">
-                <h2 class="mb-0">Soyez attentif... <a href="{{ path('app_word_found', {'word': 'Ouvrez'}) }}">Ouvrez</a> l'oeil...</h2>
+                <h2 class="mb-0">Soyez attentif... Ouvrez l'oeil...</h2>
             </div>
             <div class="card-body text-center">
                 <img src="https://media1.tenor.com/m/QLbV11ltA8cAAAAC/smart-thinking.gif" class="img-fluid rounded" alt="Smart Thinking GIF">
@@ -35,7 +35,7 @@
                         </p>
                     {% else %}
                         <p>
-                            Mais attention, <span class="text-muted">n'ayez pas <span class="hover-red">peur</span> . </span>
+                            Mais attention, <span class="text-muted">n'ayez pas <a href="{{ path('app_word_found', {'word': 'Peur'}) }}" class="hover-red-peur">peur</a> . </span>
                             Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
                             Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
                         </p>

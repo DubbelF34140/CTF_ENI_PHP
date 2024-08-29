@@ -19,11 +19,7 @@
                     {% else %}
                         <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_user_list') }}">Users</a>
                     {% endif %}
-                    {% if is_granted('ROLE_GOOD') %}
-                        <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_boisson') }}">Boissons</a>
-                    {% else %}
-                        <a class="navbar-brand text-decoration-none fw-bold fs-6 ms-2 hover-red" href="{{ path('app_boisson') }}">Boissons</a>
-                    {% endif %}
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_boisson') }}">Boissons</a>
                     <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_gris') }}">Gris</a>
                     <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_musicien') }}">Musiciens</a>
                     <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_comete') }}">Cometes</a>
