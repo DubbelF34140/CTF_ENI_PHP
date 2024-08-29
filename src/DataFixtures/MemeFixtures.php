@@ -22,7 +22,6 @@ class MemeFixtures extends Fixture
         $b3->setName('Sleep');
         $b3->setUrl('https://media1.tenor.com/m/1ag2zxamoT0AAAAd/sleep-cat.gif');
 
-
         $manager->persist($b1);
         $manager->persist($b2);
         $manager->persist($b3);

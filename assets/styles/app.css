@@ -1,6 +1,8 @@
 /* Styles globaux */
 body {
     font-family: 'Arial', sans-serif;
+    background-image: url('https://i.gifer.com/fz6d.gif');
+    background-size: cover;
 }
 
 /* Header */

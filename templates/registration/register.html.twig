@@ -3,24 +3,66 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+    <div class="container my-5">
+        <div class="card mx-auto" style="max-width: 540px;">
+            <div class="card-header bg-dark text-white">
+                <h2 class="mb-0">Register</h2>
+            </div>
+            <div class="card-body">
+                {% for flash_error in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                {% endfor %}
 
-    <h1>Register</h1>
-
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.date)}}
-
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                {{ form_start(registrationForm) }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(registrationForm.nom, {
+                            label: 'Nom',
+                            attr: {
+                                class: 'form-control'
+                            }
+                        }) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(registrationForm.prenom, {
+                            label: 'Prénom',
+                            attr: {
+                                class: 'form-control'
+                            }
+                        }) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(registrationForm.date, {
+                            label: 'Date de naissance',
+                            attr: {
+                                class: 'form-control'
+                            }
+                        }) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(registrationForm.email, {
+                            label: 'Email',
+                            attr: {
+                                class: 'form-control'
+                            }
+                        }) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Password',
+                            attr: {
+                                class: 'form-control'
+                            }
+                        }) }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
