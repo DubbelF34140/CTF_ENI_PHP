@@ -8,11 +8,18 @@
         <h1 class="mb-4 text-center">Mon compte</h1>
         <p>Nom : {{app.user.nom}}</P>
         <p>Prenom : {{app.user.prenom}}</P>
-        {% if is_granted('ROLE_USER') %}
-            <p>date	<strong class="red">anniversaire</strong> : 	{{app.user.anniversaire.date | date("d/m/y")}}</P>
+        {% if is_granted('ROLE_GOOD') %}
+            <p>date	<a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Anniversaire'}) }}">anniversaire</a> : 	{{app.user.anniversaire.date | date("d/m/y")}}</P>
         {% else %}
             <p>date anniversaire : {{app.user.anniversaire.date | date("d/m/y")}}</P>
         {% endif %}
             <p>Email : {{app.user.email}}</P>      
     </div>
+    {% if is_granted('ROLE_GOOD') %}
+        <div class="card fixed-bottom-right">
+            <div class="card-body text-center">
+                <img src="https://media1.tenor.com/m/y0EfHonmqAQAAAAC/darth-vader-vader.gif" class="img-fluid rounded" alt="Genius Think Alike GIF">
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

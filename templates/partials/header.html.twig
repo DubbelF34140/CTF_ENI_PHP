@@ -14,7 +14,7 @@
                 <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_main') }}">Home</a>
                 <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_meme') }}">Meme</a>
                 {% if is_granted('ROLE_USER') %}
-                    {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_GOOD') %}
                         <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" style="color: #ff0900" href="{{ path('app_user_list') }}">Users</a>
                     {% else %}
                         <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_user_list') }}">Users</a>

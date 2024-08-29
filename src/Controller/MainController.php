@@ -33,4 +33,12 @@ class MainController extends AbstractController
         return $this->render('home/aboutus.html.twig', [
         ]);
     }
+
+    #[Route('/word_found/{word}', name: 'app_word_found')]
+    public function wordFound(string $word): Response
+    {
+        return $this->render('home/word_found.html.twig', [
+            'word' => $word,
+        ]);
+    }
 }

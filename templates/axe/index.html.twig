@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% if is_granted('ROLE_USER') %}
-        <h1 class="display-4">Axe d'amélioration du site</h1>
+    {% if is_granted('ROLE_GOOD') %}
+        <h1 class="display-4"><a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Axe'}) }}">Axe</a> d'amélioration du site</h1>
     {% else %}
         <h1 class="display-4">Commentaire d'amélioration du site</h1>
     {% endif %}
@@ -16,6 +16,14 @@
 
     {% if is_granted('ROLE_USER') %}
         <a href="{{ path('app_axe_create') }}" class="btn btn-primary">Proposer un commentaire</a>
+    {% endif %}
+
+    {% if is_granted('ROLE_GOOD') %}
+        <div class="card fixed-bottom-right">
+            <div class="card-body text-center">
+                <img src="https://media1.tenor.com/m/sazVZW05S-wAAAAd/genius-think-alike.gif" class="img-fluid rounded" alt="Genius Think Alike GIF">
+            </div>
+        </div>
     {% endif %}
 
 {% endblock %}

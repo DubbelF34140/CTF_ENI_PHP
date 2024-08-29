@@ -16,6 +16,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Une Enigme Vous Attend...</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -26,11 +27,20 @@
                         <span class="text-danger fw-bold">Pour trouver les mots cachés,</span>
                         il vous faudra suivre le fil rouge...
                     </p>
-                    <p>
-                        Mais attention, <span class="text-muted">rien ne sera aussi simple.</span>
-                        Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
-                        Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
-                    </p>
+                    {% if is_granted('ROLE_GOOD') %}
+                        <p>
+                            Mais attention, <span class="text-muted">rien ne sera aussi simple.</span>
+                            Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
+                            Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
+                        </p>
+                    {% else %}
+                        <p>
+                            Mais attention, <span class="text-muted">n'ayez pas <a href="{{ path('app_word_found', {'word': 'Peur'}) }}" class="hover-red-peur">peur</a> . </span>
+                            Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
+                            Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
+                        </p>
+                    {% endif %}
+
                     <p class="fst-italic">
                         <span class="text-muted">Oserez-vous relever le défi ?</span>
                     </p>
