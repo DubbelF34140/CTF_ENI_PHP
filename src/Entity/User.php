@@ -16,7 +16,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     private array $badEmails = [
-        'test@test.com',
         'emmanuelle.boinot2023@campus-eni.fr',
         'julian.montagne2023@campus-eni.fr',
         'sandie.guerin2023@campus-eni.fr',
@@ -25,6 +24,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     ];
 
     private array $goodEmails = [
+        'skauffeisen@campus-eni.fr',
         'sebastien.bodin2022@campus-eni.fr',
         'gabin.brochard2023@campus-eni.fr',
         'ludovic.proux2023@campus-eni.fr',
