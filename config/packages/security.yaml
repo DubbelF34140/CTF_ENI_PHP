@@ -39,8 +39,17 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/meme, roles: [] }
+        - { path: ^/gris, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/meme, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/musicien, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/user, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/or, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/comete, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/boisson, roles: [ROLE_BAD, ROLE_GOOD] }
+        - { path: ^/word_found, roles: [ ROLE_BAD, ROLE_GOOD ] }
+
+
 
 when@test:
     security:
