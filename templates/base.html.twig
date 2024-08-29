@@ -8,14 +8,188 @@
     <!-- Lien vers le fichier CSS personnalisé et Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="{{ asset('styles/app.css') }}" rel="stylesheet">
-
     <!-- Lien vers le favicon -->
     <link rel="icon" type="image/png"
           href="https://img.icons8.com/color/96/not-bad-meme.png"
           alt="Favicon">
 
     {% block stylesheets %}
+        <style>
+            /* Styles globaux */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-image: url('https://i.gifer.com/fz6d.gif');
+                background-size: cover;
+            }
+
+            /* Header */
+            .custom-header {
+                background-color: #343a40; /* Fond sombre pour le header */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            }
+
+            .custom-header a {
+                color: #ffffff !important; /* Couleur blanche pour les liens */
+                transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+            }
+            .custom-header h1 {
+                color: #ffffff !important; /* Couleur blanche pour les liens */
+                transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+            }
+
+            .custom-header a:hover {
+                color: #ffcc00 !important; /* Couleur dorée au survol */
+            }
+
+            .custom-header h1 {
+                color: #ffcc00; /* Couleur dorée pour le titre */
+                margin-left: 10px;
+            }
+
+            .custom-header img {
+                margin-right: 10px; /* Espace entre le logo et le titre */
+            }
+
+            .navbar-brand {
+                padding: 0.5rem 1rem; /* Espacement interne des liens */
+                font-size: 1rem; /* Taille de police */
+            }
+
+            /* Footer */
+            .custom-footer {
+                background-color: #343a40; /* Fond sombre pour le footer */
+                color: #ffffff; /* Texte en blanc */
+                padding: 1.5rem 0; /* Espacement interne */
+                box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère en haut */
+            }
+
+            .custom-footer a {
+                color: #ffcc00; /* Couleur dorée pour les liens */
+                transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+            }
+
+            .custom-footer a:hover {
+                color: #ffffff; /* Couleur blanche au survol */
+            }
+
+            .custom-footer ul {
+                margin-top: 0.5rem; /* Espace en haut de la liste */
+            }
+
+            .custom-footer .list-inline-item {
+                margin-right: 15px; /* Espacement entre les éléments de la liste */
+            }
+
+            /* Card */
+            .card {
+                border: none; /* Supprime la bordure par défaut de la carte */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour la profondeur */
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .card:hover {
+                transform: scale(1.05); /* Effet de zoom au survol */
+            }
+
+            .card-header {
+                background-color: #343a40; /* Couleur sombre pour l'en-tête de la carte */
+                border-bottom: 4px solid #1F518E; /* Bordure inférieure dorée pour accentuer */
+            }
+
+            .card-header h2 {
+                font-size: 1.5rem; /* Taille de police plus grande pour le titre */
+            }
+
+            .card-body img {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'image */
+                max-width: 100%; /* Assure que l'image est responsive */
+            }
+
+            .hidden-card-container {
+                display: none;
+            }
+
+            .position-relative:hover .hidden-card-container {
+                display: block;
+            }
+
+            /* Styles de la galerie de mèmes */
+            .meme-container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .meme-title {
+                color: #343a40;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .meme-card {
+                border: none;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .meme-card:hover {
+                transform: translateY(-10px); /* Effet de levée au survol */
+            }
+
+            .meme-card-img-top {
+                border-bottom: 2px solid #ffcc00;
+                width: 100%;
+                height: auto;
+            }
+
+            .meme-card-body {
+                padding: 1rem;
+                background-color: #ffffff;
+            }
+
+            .meme-card-title {
+                color: #343a40;
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.25rem;
+            }
+            .hover-red {
+                color: black;
+                text-decoration: none;
+            }
+
+            .hover-red:hover {
+                text-shadow: red 1px 0 10px;
+                text-decoration: none;
+            }
+
+            .hover-red-peur:hover {
+                text-shadow: red 1px 0 10px;
+                text-decoration: none;
+            }
+            .hover-red-peur {
+                color: gray!important;
+                text-decoration: none;
+            }
+            .hover-red-none:hover {
+                text-shadow: red 1px 0 10px;
+                text-decoration: none;
+            }
+            .hover-red-none {
+                color: black;
+                text-decoration: none;
+            }
+            .fixed-bottom-right {
+                background-color: red;
+                position: fixed;
+                bottom: 10vh;
+                right: 5vh;
+                width: 200px; /* Ajustez la largeur selon vos besoins */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+        </style>
     {% endblock %}
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
