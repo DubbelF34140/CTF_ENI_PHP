@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="display-4">Axe d'amélioration du site</h1>
+    {% if is_granted('ROLE_USER') %}
+        <h1 class="display-4">Axe d'amélioration du site</h1>
+    {% else %}
+        <h1 class="display-4">Commentaire d'amélioration du site</h1>
+    {% endif %}
     <p class="lead">Proposés par nos utilisateurs : </p>
 
     <ul class="list-group">

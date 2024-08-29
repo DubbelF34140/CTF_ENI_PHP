@@ -1,0 +1,26 @@
+{# templates/meme/create.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un Mème{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <h1 class="text-center">Créer un Nouveau Mème</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{ form_start(form) }}
+                <div class="mb-3">
+                    {{ form_label(form.name, 'Nom du Mème', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.url, 'URL du Mème', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.url, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Créer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

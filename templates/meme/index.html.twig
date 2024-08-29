@@ -1,0 +1,26 @@
+{# templates/meme/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Mèmes{% endblock %}
+
+{% block body %}
+    <div class="container meme-container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="meme-title">Galerie de Mèmes</h1>
+            <a href="{{ path('app_meme_create') }}" class="btn btn-success">Créer un Mème</a>
+        </div>
+        <div class="row">
+            {% for meme in memes %}
+                <div class="col-md-4 mb-4">
+                    <div class="meme-card">
+                        <img src="{{ meme.url }}" class="meme-card-img-top" alt="{{ meme.name }}">
+                        <div class="meme-card-body">
+                            <h5 class="meme-card-title">{{ meme.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

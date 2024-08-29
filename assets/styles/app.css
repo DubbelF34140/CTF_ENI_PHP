@@ -1,3 +1,138 @@
+/* Styles globaux */
 body {
-    background-color: skyblue;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.custom-header {
+    background-color: #343a40; /* Fond sombre pour le header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.custom-header a {
+    color: #ffffff !important; /* Couleur blanche pour les liens */
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+.custom-header h1 {
+    color: #ffffff !important; /* Couleur blanche pour les liens */
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.custom-header a:hover {
+    color: #ffcc00 !important; /* Couleur dorée au survol */
+}
+
+.custom-header h1 {
+    color: #ffcc00; /* Couleur dorée pour le titre */
+    margin-left: 10px;
+}
+
+.custom-header img {
+    margin-right: 10px; /* Espace entre le logo et le titre */
+}
+
+.navbar-brand {
+    padding: 0.5rem 1rem; /* Espacement interne des liens */
+    font-size: 1rem; /* Taille de police */
+}
+
+/* Footer */
+.custom-footer {
+    background-color: #343a40; /* Fond sombre pour le footer */
+    color: #ffffff; /* Texte en blanc */
+    padding: 1.5rem 0; /* Espacement interne */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère en haut */
+}
+
+.custom-footer a {
+    color: #ffcc00; /* Couleur dorée pour les liens */
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.custom-footer a:hover {
+    color: #ffffff; /* Couleur blanche au survol */
+}
+
+.custom-footer ul {
+    margin-top: 0.5rem; /* Espace en haut de la liste */
+}
+
+.custom-footer .list-inline-item {
+    margin-right: 15px; /* Espacement entre les éléments de la liste */
+}
+
+/* Card */
+.card {
+    border: none; /* Supprime la bordure par défaut de la carte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour la profondeur */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+.card-header {
+    background-color: #343a40; /* Couleur sombre pour l'en-tête de la carte */
+    border-bottom: 4px solid #1F518E; /* Bordure inférieure dorée pour accentuer */
+}
+
+.card-header h2 {
+    font-size: 1.5rem; /* Taille de police plus grande pour le titre */
+}
+
+.card-body img {
+    border: 3px solid #ffcc00; /* Bordure dorée autour de l'image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'image */
+    max-width: 100%; /* Assure que l'image est responsive */
+}
+
+.hidden-card-container {
+    display: none;
+}
+
+.position-relative:hover .hidden-card-container {
+    display: block;
+}
+
+/* Styles de la galerie de mèmes */
+.meme-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meme-title {
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.meme-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.meme-card:hover {
+    transform: translateY(-10px); /* Effet de levée au survol */
+}
+
+.meme-card-img-top {
+    border-bottom: 2px solid #ffcc00;
+    width: 100%;
+    height: auto;
+}
+
+.meme-card-body {
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
+.meme-card-title {
+    color: #343a40;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.25rem;
 }

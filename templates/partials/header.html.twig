@@ -5,40 +5,33 @@
             <img width="50" height="50" src="https://img.icons8.com/color-pixels/32/in-transit.png" alt="in-transit"/>
 
             <!-- Nom du site -->
-            <h1 class="fs-4 mb-0 text-dark">Transit-List</h1>
+            <h1 class="fs-4 mb-0 text-dark">Meme-Lister</h1>
         </a>
     </div>
     <nav class="custom-header py-2">
-        <div class="container-fluid">
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_main') }}">Home</a>
-            <!-- Lien vers la liste des utilisateurs -->
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_user_list') }}">Users</a>
-<a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_register') }}">S'inscrire</a>
-{% if not app.user %}
-
-<a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_login') }}">Se connecter</a>
-{% endif %}
-
-{% if app.user %}
-
-<a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_logout') }}">Déconnexion</a>
-{% endif %}
-
-
-
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_boisson') }}">Boissons</a>
-
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_gris') }}">Gris</a>
-
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_musicien') }}">Musiciens</a>
-
-            <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"
-               href="{{ path('app_comete') }}">Cometes</a>
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div>
+                <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_main') }}">Home</a>
+                <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_meme') }}">Meme</a>
+                {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_USER') %}
+                        <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" style="color: #ff0900" href="{{ path('app_user_list') }}">Users</a>
+                    {% else %}
+                        <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_user_list') }}">Users</a>
+                    {% endif %}
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_boisson') }}">Boissons</a>
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_gris') }}">Gris</a>
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_musicien') }}">Musiciens</a>
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_comete') }}">Cometes</a>
+                {% endif %}
+            </div>
+            <div>
+                {% if is_granted('ROLE_USER') %}
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_logout') }}">Déconnexion</a>
+                {% else %}
+                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_login') }}">Se connecter</a>
+                {% endif %}
+            </div>
         </div>
     </nav>
 </header>
