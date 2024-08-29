@@ -8,17 +8,38 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>La folie des grandeurs</h1>
-    <p>Connaissez-vous cette réplique ? : "Il est l'<a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Or'}) }}">or</a> mon seignor"</p>
-    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2"  href=" {{ film.lien}} "> Un peu de culture </a>
-</div>
-    {% if is_granted('ROLE_BAD') %}
-        <div class="card fixed-bottom-right">
-            <div class="card-body text-center">
-                <img src="https://media1.tenor.com/m/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif" class="img-fluid rounded" alt="Genius Think Alike GIF">
-            </div>
+{% if is_granted('ROLE_BAD') %}
+    <div class="card fixed-bottom-right">
+        <div class="card-body text-center">
+            <img src="https://media1.tenor.com/m/MFE6UiMEpRoAAAAC/math-zack-galifianakis.gif" class="img-fluid rounded" alt="Genius Think Alike GIF">
         </div>
-    {% endif %}
+    </div>
+{% endif %}
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Quelques films en
+        <a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Or'}) }}">or</a>
+    </h1>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Titre</th>
+					<th scope="col" class="text-center">Lien</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for film in films %}
+					<tr>
+						<td>{{ film.titre }}</td>
+                    <td><a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href=" {{film.lien}} ">{{film.lien}}</a>
+                    </td>						
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
 {% endblock %}
 
