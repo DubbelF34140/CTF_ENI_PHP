@@ -33,11 +33,17 @@
                             Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
                             Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
                         </p>
-                    {% else %}
+                    {% elseif is_granted('ROLE_BAD') %}
                         <p>
                             Mais attention, <span class="text-muted">n'ayez pas <a href="{{ path('app_word_found', {'word': 'Peur'}) }}" class="hover-red-peur">peur</a> . </span>
                             Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
                             Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
+                        </p>
+                    {% else %}
+                        <p>
+                                Mais attention, <span class="text-muted">n'ayez pas peur.</span>
+                                Commencez par vous enregistrer avec votre <strong>mail ENI</strong>.
+                                Une fois que vous aurez rejoint les initiés, ouvrez grand les yeux et suivez les indices.
                         </p>
                     {% endif %}
 
