@@ -21,6 +21,7 @@ class RegistrationController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
+        dump($user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
@@ -30,23 +31,31 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            //dd($form->get('anniversaire')->getData());
             $anniversaire = new Anniversaire();
-            $anniversaire->setDate($form->get('anniversaire')->getData());
+            $anniversaire->setDate($form->get('date')->getData());
 
             $entityManager->persist($anniversaire);
             $entityManager->flush();
 
-            // //if($anniversaire->getId()){
-            //     $user->setAnniversaire($anniversaire);
-            //     $entityManager->persist($user);
-            // //}            
+            dump($anniversaire);
+            if($anniversaire->getId()){
+                $user->setAnniversaire($anniversaire);
+                $entityManager->persist($user);
+            }            
            
-            // $entityManager->flush();
+            $entityManager->flush();
 
             // do anything else you need here, like send an email
-            return $security->login($user, 'form_login', 'main');
+            //return $security->login($user, 'form_login', 'main');
+            return $security->login($user, AppAuthenticator::class, 'main');
+            
+            // return $this->render('security/login.html.twig', [
+            // 'title' => 'Salut',        
+            // ]);
+
         }
-        
+        dump($form);
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,
         ]);
