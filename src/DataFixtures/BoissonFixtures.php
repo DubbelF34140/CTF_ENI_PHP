@@ -28,7 +28,7 @@ class BoissonFixtures extends Fixture
         
         $b5 = new Boisson();
         $b5->setNom('Monster');
-        $b5->setDescription('Pour les palais de dobberman.');
+        $b5->setDescription('Pour les palais de doberman.');
 
         $b6 = new Boisson();
         $b6->setNom('Redbull');
