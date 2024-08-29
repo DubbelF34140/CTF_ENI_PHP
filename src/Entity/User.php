@@ -15,6 +15,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    private array $badEmails = [
+        'test@test.com'
+    ];
+
+    private array $goodEmails = [
+        'test2@test.com',
+        'test3@test.com'
+    ];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -46,7 +55,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-    
     #[ORM\ManyToOne(inversedBy: 'users')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Anniversaire $anniversaire = null;
@@ -88,6 +96,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
+
+        if (in_array($this->email, $this->badEmails, true)) {
+            $roles[] = 'ROLE_BAD';
+        }
+
+        if (in_array($this->email, $this->goodEmails, true)) {
+            $roles[] = 'ROLE_GOOD';
+        }
 
         return array_unique($roles);
     }
