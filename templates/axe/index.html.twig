@@ -2,7 +2,7 @@
 
 {% block body %}
     {% if is_granted('ROLE_GOOD') %}
-        <h1 class="display-4"><span class="hover-red">Axe</span> d'amélioration du site</h1>
+        <h1 class="display-4"><a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Axe'}) }}">Axe</a> d'amélioration du site</h1>
     {% else %}
         <h1 class="display-4">Commentaire d'amélioration du site</h1>
     {% endif %}

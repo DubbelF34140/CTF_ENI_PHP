@@ -9,7 +9,7 @@
         <p>Nom : {{app.user.nom}}</P>
         <p>Prenom : {{app.user.prenom}}</P>
         {% if is_granted('ROLE_GOOD') %}
-            <p>date	<span class="hover-red">anniversaire</span> : 	{{app.user.anniversaire.date | date("d/m/y")}}</P>
+            <p>date	<a class="hover-red-none" href="{{ path('app_word_found', {'word': 'Anniversaire'}) }}">anniversaire</a> : 	{{app.user.anniversaire.date | date("d/m/y")}}</P>
         {% else %}
             <p>date anniversaire : {{app.user.anniversaire.date | date("d/m/y")}}</P>
         {% endif %}
