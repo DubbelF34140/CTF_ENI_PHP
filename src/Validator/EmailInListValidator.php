@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class EmailInListValidator extends ConstraintValidator
 {
     private array $allowedEmails = [
+        'test@test.com',
         'sebastien.bodin2022@campus-eni.fr',
         'gabin.brochard2023@campus-eni.fr',
         'ludovic.proux2023@campus-eni.fr',
