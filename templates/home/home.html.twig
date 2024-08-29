@@ -44,7 +44,13 @@
                     <p class="fst-italic">
                         <span class="text-muted">Oserez-vous relever le défi ?</span>
                     </p>
-                    <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_register') }}">S'enregistré</a>
+                    <p class="fst-italic">
+                        <span class="text-muted">PS : Sur les pages contenant des mots, un indicateur vous sera affiché.</span>
+                    </p>
+                    {% if is_granted('ROLE_USER') %}
+                    {% else %}
+                        <a class="navbar-brand text-dark text-decoration-none fw-bold fs-6 ms-2" href="{{ path('app_register') }}">S'enregistré</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

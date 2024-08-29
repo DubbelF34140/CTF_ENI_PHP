@@ -82,7 +82,6 @@ body {
 }
 
 .card-body img {
-    border: 3px solid #ffcc00; /* Bordure dorée autour de l'image */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'image */
     max-width: 100%; /* Assure que l'image est responsive */
 }
@@ -163,6 +162,7 @@ body {
     text-decoration: none;
 }
 .fixed-bottom-right {
+    background-color: red;
     position: fixed;
     bottom: 10vh;
     right: 5vh;
